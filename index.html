@@ -788,6 +788,56 @@ footer {
     font-size: 12px;
   }
 }
+
+/* Mobile (small devices) tweaks: reduce large splash art, hide floating cards,
+   tighten paddings and font-sizes for better readability on phones */
+@media (max-width: 480px) {
+  /* Splash */
+  .splash-bg { background-position: 50% 30%; }
+  .float-blob { display: none; }
+  .splash-card { display: none; }
+  .check-badge { display: none; }
+  .splash-brand { padding: 8px 12px; }
+  .splash-logo { font-size: clamp(36px, 12vw, 56px); letter-spacing: -1px; }
+  .splash-tagline { font-size: 12px; margin-top: 6px; }
+  #enterBtn { padding: 12px 26px; margin-top: 18px; font-size: 14px; }
+
+  /* Navbar */
+  .navbar { height: 56px; padding: 0 14px; }
+  .nav-logo { font-size: 18px; }
+  .nav-links { display: none; }
+
+  /* Hero */
+  .hero { padding-top: 56px; }
+  .hero-inner { padding: 36px 16px; max-width: 92%; }
+  .hero h1 { font-size: clamp(28px, 9vw, 44px); }
+  .hero-sub { font-size: 15px; }
+  .hero-badge { padding: 6px 12px; font-size: 12px; }
+
+  /* Stats & grids */
+  .stats-bar { flex-direction: column; gap: 8px; margin-top: 28px; }
+  .stat-item { padding: 12px 8px; border-right: none; border-bottom: 1px solid var(--border); }
+  .stat-item:last-child { border-bottom: none; }
+
+  .services-grid { gap: 12px; padding: 0 8px; }
+  .service-card { padding: 18px; border-radius: 14px; }
+  .svc-icon-wrap { width: 44px; height: 44px; border-radius: 12px; font-size: 20px; }
+
+  .plans-grid { gap: 16px; padding: 0 8px; }
+  .plan-card { padding: 24px 20px; border-radius: 18px; }
+
+  /* About / footer */
+  .about-grid { grid-template-columns: 1fr; gap: 28px; }
+  footer { padding: 20px; flex-direction: column; align-items: flex-start; gap: 12px; }
+
+  /* Floating widget adjustments */
+  .floating-drive-widget { right: 12px; bottom: 12px; }
+  .floating-drive-widget__art { display: none; }
+  .drive-btn { padding: 10px 14px; font-size: 13px; }
+
+  /* Reduce heavy animations on mobile for performance */
+  .splash-logo, .splash-tagline, #enterBtn, .splash-card { animation-duration: 0.6s; }
+}
 </style>
 </head>
 <body>
