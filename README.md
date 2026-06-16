@@ -1,336 +1,352 @@
-# E-Commerce Platform Backend API
+# 🚀 [Project Name]
 
-A robust RESTful API built with Node.js, Express, and MongoDB for managing an e-commerce platform. This backend service provides complete user authentication, product management, and order processing functionality.
+> [One-line description — what it does and who it's for]
 
-## 🚀 Features
+![Project Banner](./screenshots/banner.png)
+<!-- Tip: a 1280x640px screenshot of your app's hero/dashboard works great as a banner -->
 
-- **User Management**
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-brightgreen?style=for-the-badge)](YOUR_DEPLOYED_URL_HERE)
+[![API Docs](https://img.shields.io/badge/API%20Docs-Postman-orange?style=for-the-badge)](YOUR_POSTMAN_COLLECTION_URL_HERE)
+[![GitHub](https://img.shields.io/badge/GitHub-Repo-black?style=for-the-badge&logo=github)](YOUR_GITHUB_REPO_URL_HERE)
 
-  - User registration and authentication
-  - JWT-based authorization
-  - Role-based access control (Customer/Admin)
-  - Secure password hashing with bcrypt
+---
 
-- **Product Management**
+## 📌 Table of Contents
 
-  - CRUD operations for products
-  - Category-based product organization (Electronics, Fashion, Sports, Home, Toys)
-  - Admin-only product creation, update, and deletion
-  - Public product listing and retrieval
+- [Overview](#overview)
+- [Screenshots](#screenshots)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Environment Variables](#environment-variables)
+- [API Endpoints](#api-endpoints)
+- [Deployment](#deployment)
+- [Author](#author)
 
-- **Order Management**
-  - Create orders with multiple products
-  - Order status tracking (pending, processing, completed, cancelled)
-  - Comprehensive order history with filtering and pagination
-  - User-specific order history with statistics
-  - Admin dashboard for all orders
-  - Date range filtering and sorting options
-  - Automatic total price calculation
+---
+
+## 🧭 Overview
+
+[Write 3–5 sentences here. What problem does this solve? Who uses it? What makes it different from a basic CRUD app? Be specific about real-world value.]
+
+**Live URL:** [https://your-app.vercel.app](https://your-app.vercel.app)  
+**Backend API:** [https://your-api.onrender.com](https://your-api.onrender.com)
+
+---
+
+## 📸 Screenshots
+
+### Home / Landing Page
+![Home Page](./screenshots/home.png)
+<!-- Replace with your actual screenshot path -->
+
+### Dashboard
+![Dashboard](./screenshots/dashboard.png)
+
+### [Key Feature — e.g. Product Listing / User Profile / Order Flow]
+![Feature Screenshot](./screenshots/feature-1.png)
+
+### Mobile View
+![Mobile View](./screenshots/mobile.png)
+<!-- Optional but impressive — shows you think responsively -->
+
+> 📁 Add all screenshots to a `/screenshots` folder in your repo root.
+
+---
+
+## ✨ Features
+
+### 👤 User
+- [ ] [Feature 1 — e.g. Register and log in with JWT authentication]
+- [ ] [Feature 2 — e.g. View and manage personal profile]
+- [ ] [Feature 3]
+- [ ] [Feature 4]
+
+### 🛠️ Admin
+- [ ] [Admin Feature 1 — e.g. Full CRUD on products/users]
+- [ ] [Admin Feature 2 — e.g. Dashboard with analytics]
+- [ ] [Admin Feature 3]
+
+### ⚙️ System
+- [ ] Role-based access control (e.g. User / Admin)
+- [ ] JWT authentication with secure HTTP-only cookies
+- [ ] Input validation and error handling
+- [ ] [Any other system-level feature — e.g. Email notifications, file uploads, pagination]
+
+---
 
 ## 🛠️ Tech Stack
 
-- **Runtime:** Node.js
-- **Framework:** Express.js
-- **Database:** MongoDB with Mongoose ODM
-- **Authentication:** JWT (JSON Web Tokens)
-- **Password Hashing:** bcrypt
-- **Validation:** express-validator
-- **File Upload:** multer
-- **CORS:** Cross-Origin Resource Sharing enabled
-- **Environment Variables:** dotenv
+| Layer        | Technology                          |
+|--------------|--------------------------------------|
+| Frontend     | React.js, [Tailwind CSS / Bootstrap / MUI] |
+| Backend      | Node.js, Express.js                 |
+| Database     | MongoDB, Mongoose ODM               |
+| Auth         | JWT, bcrypt                         |
+| File Upload  | [Multer / Cloudinary — if used]     |
+| Deployment   | [Vercel / Render / Railway / AWS]   |
+| Other        | [Any other lib — e.g. Nodemailer, Socket.io, dotenv] |
 
-## 📋 Prerequisites
+---
 
-Before you begin, ensure you have the following installed:
+## 🚦 Getting Started
 
-- Node.js (v14 or higher)
-- npm or yarn
-- MongoDB (local installation or MongoDB Atlas account)
-- Git
+### Prerequisites
 
-## 🔧 Installation
+Make sure you have these installed:
+
+- [Node.js](https://nodejs.org/) v18+
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+- [MongoDB](https://www.mongodb.com/) (local) or a [MongoDB Atlas](https://www.mongodb.com/atlas) account
+- [Git](https://git-scm.com/)
+
+---
 
 ### 1. Clone the Repository
 
 ```bash
-git clone <your-repository-url>
-cd E-Commerce-Platform
+git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+cd YOUR_REPO_NAME
 ```
 
-### 2. Navigate to Backend Directory
+---
+
+### 2. Set Up the Backend
 
 ```bash
-cd Backend
-```
-
-### 3. Install Dependencies
-
-```bash
+cd backend
 npm install
 ```
 
-### 4. Environment Configuration
-
-Create a `.env` file in the `Backend` directory with the following variables:
-
-```env
-PORT=8085
-DEV_MODE=development
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret_key
-```
-
-**Example Configuration:**
-
-```env
-PORT=8085
-DEV_MODE=development
-MONGO_URI=mongodb://localhost:27017/ecommerce
-# Or for MongoDB Atlas:
-# MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/ecommerce
-JWT_SECRET=mysupersecretjwtkey123456
-```
-
-### 5. Start the Server
-
-**Development Mode (with auto-restart):**
+Create a `.env` file in the `/backend` directory (see [Environment Variables](#environment-variables) below), then:
 
 ```bash
+# Development (with auto-restart)
 npm run dev
-```
 
-**Production Mode:**
-
-```bash
+# Production
 npm start
 ```
 
-The server will start on `http://localhost:8085`
+Backend runs on: `http://localhost:YOUR_PORT`
 
-## 📁 Project Structure
+---
 
+### 3. Set Up the Frontend
+
+```bash
+cd ../frontend
+npm install
+npm run dev
 ```
-Backend/
-├── config/
-│   └── db.js                      # Database configuration
-├── controllers/
-│   ├── userController.js          # User business logic
-│   ├── productController.js       # Product business logic
-│   ├── orderController.js         # Order business logic
-│   └── orderHistoryController.js  # Order history & analytics
-├── middlewares/
-│   ├── AuthMiddleware.js          # Authentication & Authorization
-│   └── validationMiddleware.js    # Input validation
-├── models/
-│   ├── user.js                    # User schema
-│   ├── product.js                 # Product schema
-│   ├── order.js                   # Order schema
-│   └── orderHistory.js            # Order history schema
-├── routes/
-│   ├── userRoutes.js              # User endpoints
-│   ├── productRoutes.js           # Product endpoints
-│   ├── orderRoutes.js             # Order endpoints
-│   └── orderHistoryRoutes.js      # Order history endpoints
-├── .env                           # Environment variables
-├── .gitignore                     # Git ignore file
-├── package.json                   # Dependencies and scripts
-└── server.js                      # Application entry point
+
+Frontend runs on: `http://localhost:5173`
+
+---
+
+## 🔐 Environment Variables
+
+Create a `.env` file inside `/backend`:
+
+```env
+PORT=YOUR_PORT
+NODE_ENV=development
+
+# MongoDB
+MONGO_URI=your_mongodb_connection_string
+
+# JWT
+JWT_SECRET=your_jwt_secret_key
+JWT_EXPIRES_IN=7d
+
+# Cloudinary (if used)
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_API_SECRET=your_api_secret
+
+# Email (if used)
+EMAIL_USER=your_email@gmail.com
+EMAIL_PASS=your_app_password
+
+# Add any other keys your project uses
 ```
+
+> ⚠️ Never commit your `.env` file. It is already listed in `.gitignore`.
+
+---
 
 ## 🔌 API Endpoints
 
-## Postman URL
+**Base URL:** `http://localhost:YOUR_PORT/api/v1`  
+**Postman Collection:** [View on Postman](YOUR_POSTMAN_COLLECTION_URL_HERE)
 
-https://www.postman.com/aviation-geoscientist-71375974/gamage/collection/32083296-f442a40c-1398-42a5-9a57-67f92bdd66de?action=share&source=copy-link&creator=32083296
+---
 
-### User Routes (`/api/v1/users`)
+### Auth Routes — `/api/v1/auth`
 
-| Method | Endpoint    | Description       | Access |
-| ------ | ----------- | ----------------- | ------ |
-| POST   | `/register` | Register new user | Public |
-| POST   | `/login`    | User login        | Public |
+| Method | Endpoint    | Description         | Access |
+|--------|-------------|---------------------|--------|
+| POST   | `/register` | Register a new user | Public |
+| POST   | `/login`    | Login and get token | Public |
+| POST   | `/logout`   | Logout user         | Auth   |
 
-**Register Request Body:**
+---
+
+### [Resource 1] Routes — `/api/v1/[resource]`
+
+> Replace `[resource]` with your actual resource (e.g. `users`, `products`, `orders`)
+
+| Method | Endpoint  | Description          | Access |
+|--------|-----------|----------------------|--------|
+| GET    | `/`       | Get all [resources]  | Public / Auth |
+| GET    | `/:id`    | Get single [resource]| Public / Auth |
+| POST   | `/`       | Create [resource]    | Admin  |
+| PUT    | `/:id`    | Update [resource]    | Admin  |
+| DELETE | `/:id`    | Delete [resource]    | Admin  |
+
+---
+
+### [Resource 2] Routes — `/api/v1/[resource2]`
+
+| Method | Endpoint  | Description          | Access |
+|--------|-----------|----------------------|--------|
+| GET    | `/`       | [Description]        | Auth   |
+| POST   | `/`       | [Description]        | Auth   |
+
+---
+
+### Request & Response Examples
+
+**POST** `/api/v1/auth/register`
 
 ```json
+// Request body
 {
-  "firstname": "John",
-  "lastname": "Doe",
+  "name": "John Doe",
   "email": "john@example.com",
-  "password": "password123",
-  "phone": "1234567890",
-  "role": 1
+  "password": "securepassword123"
 }
-```
 
-**Login Request Body:**
-
-```json
+// Response
 {
-  "email": "john@example.com",
-  "password": "password123"
+  "success": true,
+  "message": "User registered successfully",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
 }
 ```
 
-### Product Routes (`/api/v1/products`)
+> Add more examples for your key endpoints here.
 
-| Method | Endpoint             | Description        | Access |
-| ------ | -------------------- | ------------------ | ------ |
-| GET    | `/getProducts`       | Get all products   | Public |
-| POST   | `/createProduct`     | Create new product | Admin  |
-| PUT    | `/updateProduct/:id` | Update product     | Admin  |
-| DELETE | `/deleteProduct/:id` | Delete product     | Admin  |
+---
 
-**Create Product Request Body:**
+### Authentication Header
 
-```json
-{
-  "name": "Product Name",
-  "description": "Product description",
-  "price": 99.99,
-  "quantity": 100,
-  "category": "Electronics"
-}
-```
-
-**Categories:** `Electronics`, `Fashion`, `Sports`, `Home`, `Toys`
-
-### Order Routes (`/api/v1/order`)
-
-| Method | Endpoint  | Description      | Access        |
-| ------ | --------- | ---------------- | ------------- |
-| POST   | `/orders` | Create new order | Authenticated |
-
-**Create Order Request Body:**
-
-```json
-{
-  "items": [
-    {
-      "product": "product_id",
-      "name": "Product Name",
-      "quantity": 2,
-      "price": 99.99
-    }
-  ],
-  "totalPrice": 199.98,
-  "status": "Pending"
-}
-```
-
-### Order History Routes (`/api/v1/orderHistory`)
-
-| Method | Endpoint        | Description              | Access        |
-| ------ | --------------- | ------------------------ | ------------- |
-| GET    | `/my-orders`    | Get user's order history | Authenticated |
-| GET    | `/admin/orders` | Get all orders (Admin)   | Admin         |
-
-**Query Parameters for Order History:**
-
-- `page` - Page number (default: 1)
-- `limit` - Items per page (default: 10)
-- `status` - Filter by status (pending, processing, completed, cancelled)
-- `fromDate` - Filter orders from date (ISO format)
-- `toDate` - Filter orders to date (ISO format)
-- `sortBy` - Sort field:direction (e.g., createdAt:desc, totalAmount:asc)
-
-**Example Request:**
-
-```
-GET /api/v1/orderHistory/my-orders?page=1&limit=10&status=completed&sortBy=createdAt:desc
-```
-
-**Response includes:**
-
-- Order list with populated product details
-- Pagination metadata (total, pages, current page)
-- User statistics (total orders, total spent, order counts by status)
-
-## 🔐 Authentication
-
-The API uses JWT (JSON Web Tokens) for authentication. After successful login, include the token in your requests:
-
-**Header:**
+Protected routes require a Bearer token:
 
 ```
 Authorization: Bearer <your_jwt_token>
 ```
 
-Or the token can be sent via cookies as `token`.
+---
 
-## 👥 User Roles
+## 🚀 Deployment
 
-- **Role 1:** Customer (default) - Can create orders, view products
-- **Role 2:** Admin - Full access including product management
+### Frontend — Vercel
 
-## 🧪 Testing the API
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
 
-You can test the API using:
+1. Push your frontend to GitHub
+2. Import the repo on [vercel.com](https://vercel.com)
+3. Set environment variables in the Vercel dashboard
+4. Deploy
 
-- **Postman** - Import endpoints and test
-- **Thunder Client** - VS Code extension
-- **cURL** - Command line testing
-
-**Example cURL request:**
-
-```bash
-curl -X POST http://localhost:8085/api/v1/users/register \
-  -H "Content-Type: application/json" \
-  -d '{
-    "firstname": "John",
-    "lastname": "Doe",
-    "email": "john@example.com",
-    "password": "password123",
-    "phone": "1234567890",
-    "role": 1
-  }'
-```
-
-## 🐛 Troubleshooting
-
-### MongoDB Connection Issues
-
-- Verify MongoDB is running locally or check Atlas connection string
-- Ensure IP whitelist is configured for MongoDB Atlas
-- Check firewall settings
-
-### Port Already in Use
-
-- Change the PORT in `.env` file
-- Kill the process using the port: `netstat -ano | findstr :8085` (Windows)
-
-### JWT Token Issues
-
-- Ensure JWT_SECRET is set in `.env`
-- Check token expiration settings
-- Verify token is included in request headers
-
-## 📝 Scripts
-
-- `npm start` - Start production server
-- `npm run dev` - Start development server with nodemon
-- `npm run server` - Alternative dev command
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📄 License
-
-## 👨‍💻 Author
-
-**Gamage Recruiters**
-
-## 🙏 Acknowledgments
-
-- Express.js team for the amazing framework
-- MongoDB for the robust database solution
-- All open-source contributors
+**Live Frontend:** [https://your-app.vercel.app](https://your-app.vercel.app)
 
 ---
 
-**Note:** Remember to never commit your `.env` file to version control. Add it to `.gitignore` to keep your sensitive information secure.
+### Backend — Render / Railway
+
+1. Push your backend to GitHub
+2. Create a new Web Service on [render.com](https://render.com) or [railway.app](https://railway.app)
+3. Set all environment variables
+4. Set build command: `npm install` and start command: `npm start`
+
+**Live API:** [https://your-api.onrender.com](https://your-api.onrender.com)
+
+---
+
+### Database — MongoDB Atlas
+
+1. Create a free cluster on [mongodb.com/atlas](https://www.mongodb.com/atlas)
+2. Whitelist `0.0.0.0/0` for deployment access
+3. Copy the connection string into your `MONGO_URI` env variable
+
+---
+
+## 📁 Project Structure
+
+```
+root/
+├── backend/
+│   ├── config/
+│   │   └── db.js                  # Database connection
+│   ├── controllers/
+│   │   └── [resource]Controller.js
+│   ├── middlewares/
+│   │   ├── authMiddleware.js
+│   │   └── errorMiddleware.js
+│   ├── models/
+│   │   └── [Resource].js
+│   ├── routes/
+│   │   └── [resource]Routes.js
+│   ├── utils/
+│   │   └── [helpers].js
+│   ├── .env                       # Not committed
+│   ├── .gitignore
+│   ├── package.json
+│   └── server.js
+│
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── assets/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── hooks/
+│   │   ├── context/               # or /store for Redux
+│   │   ├── services/              # API call functions
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   ├── .env
+│   └── package.json
+│
+├── screenshots/                   # UI screenshots for README
+│   ├── banner.png
+│   ├── home.png
+│   ├── dashboard.png
+│   └── mobile.png
+│
+└── README.md
+```
+
+---
+
+## 👨‍💻 Author
+
+**Thisal Gonsalkorala**  
+Full-Stack Software Engineer
+
+[![Portfolio](https://img.shields.io/badge/Portfolio-Visit-blue?style=flat-square)](YOUR_PORTFOLIO_URL)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat-square&logo=linkedin)](YOUR_LINKEDIN_URL)
+[![GitHub](https://img.shields.io/badge/GitHub-Follow-black?style=flat-square&logo=github)](https://github.com/YOUR_USERNAME)
+[![Email](https://img.shields.io/badge/Email-Contact-red?style=flat-square&logo=gmail)](mailto:tdimith10@gmail.com)
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](./LICENSE).
+
+---
+
+> Built with ☕ and TypeScript by Thisal Gonsalkorala
